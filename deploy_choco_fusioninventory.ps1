@@ -13,7 +13,7 @@
 mkdir C:\Support\FusionInventory
 
 # Set install params and adjust permissions on C:\Support\FusionInventory
-$fi_server = [{fusion_server_uri}] # ie: https://glpi.hostname.com/plugins/fusioninventory/ or https://hostname.com/glpi/plugins/fusioninventory/
+$fi_server = {[fusion_server_uri]} # ie: https://glpi.hostname.com/plugins/fusioninventory/ or https://hostname.com/glpi/plugins/fusioninventory/
 $localdir = "C:\Support\FusionInventory"
 $local_acl = Get-Acl $localdir
 $local_aclentry = "Everyone","FullControl","Allow"
@@ -31,5 +31,8 @@ if (!(Test-Path $choco)) {
   Write-Host "Chocolatey Found!"
 }
 
-# Install Fusion Inventory agent with arguments and [{tag}]
-choco install fusioninventory-agent --yes --no-progress --installargs "/execmode=service /delaytime=3600 /server='$fi_server' /local=$localdir /debug=1 /no-start-menu /tag='deploy-test' /add-firewall-exception /runnow"
+# Install Fusion Inventory agent with arguments and [{tag}]. As-is, the arguments will install the agent as a service, updating to a local 
+# directory and remote server, run the service immediately after installation, delay the initial inventory for 5 min., generate normal debug
+# info, and add an exception to the firewall.
+
+choco install fusioninventory-agent --yes --no-progress --installargs "/execmode=service /delaytime=3600 /server='$fi_server' /local=$localdir /debug=1 /no-start-menu /tag='{[pc_tag]}' /add-firewall-exception /runnow"
