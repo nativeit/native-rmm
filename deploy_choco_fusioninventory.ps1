@@ -1,4 +1,13 @@
-# This script checks for Chocolatey and installs if needed
+# |  #   #   #   #   #   #   #   #   #   #   #   #   #   __//    N A T I V E . I T    //__    #   #   #   #   #   #   #   #   #   #   #   |
+# |                                                                                                                                       |
+# |  This script checks for Chocolatey and installs it if needed. It then installs FusionInventory for our GPLI server at                 |
+# |  psa.nativeit.net (BE SURE TO CHANGE THIS IF YOU FORK THIS). A local report directory is added at C:\Support\FusionInventory.         |
+# |                                                                                                                                       |
+# |  This script was revised, tested, and approved on 2021-11-18.                                                                         |
+# |                                                                                                                                       |
+# |  #   #   #   #   #   #   #   #   #   #   #   #   #   __//    desk.nativeit.net     //__   #   #   #   #   #   #   #   #   #   #   #   |
+
+# 
 # Must be run as admin/system
 
 # Create directory for Fusion Inventory reports
