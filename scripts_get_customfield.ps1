@@ -1,4 +1,5 @@
 # |  #   #   #   #   #   #   #   #   #   #   #   #   #   __//    N A T I V E . I T    //__    #   #   #   #   #   #   #   #   #   #   #   |
+# |                                                                                                                                       |
 # |  This script allows other automation scripts to pull and utilize the values from custom fields. Be sure to tweak the relevant         |
 # |  fields to fit your use-case. This was taken from:                                                                                    |
 # |                                                                                                                                       |
