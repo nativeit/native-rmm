@@ -1,3 +1,17 @@
+#                                                             𝝢 𝝠 𝝩 𝝞 𝗩 𝝣 ⧟ 𝝞 𝝩                                                             
+# ⎧ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎫
+# |                                                                                                                                                 |
+# |  This script replaces the details of the Atera agent such that its app name in Apps & Features, services, and menus reflects                    |
+# |  your own brand rather than that of Atera's. The stock icon is replaced with one of your own (hosted from a public URL).                        |
+# |                                                                                                                                                 |
+# |  This script was revised, tested, and approved on 2021-12-15.                                                                                   |
+# |                                                                                                                                                 |
+# |     NOTES:                                                                                                                                      |
+# |       - This script was taken and adapted from https://www.cyberdrain.com/automating-with-powershell-deploying-temporary-access-passwords/      |                                                                                                                            |
+# |                                                                                                                                                 |
+# ⎩ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎭
+#       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  ✚  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
+
 ######### TAP Settings #########
 $MinimumLifetime = "60" #Minutes
 $MaximumLifetime = "480" #minutes
