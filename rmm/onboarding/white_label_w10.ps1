@@ -15,6 +15,16 @@
 # |   - The registry paths are from Windows 10, other versions may differ and cause this script to fail.                                    |
 # |   - See further comments for more details about what is being changed.                                                                  |
 # |                                                                                                                                         |
+# |    VARIABLES:                                                                                                                           |
+# |   - your_appname:   Name that will appear as the agent software in Apps & Features                                                      |
+# |   - icon_url:       Publicly accessible URL for downloading your app icon in .ico format                                                |
+# |   - appname_slug:   Your app name abbreviated with no spaces or special characters (to use with icon filename)                          |
+# |   - company_name:   Your company's name as you want it to appear in support and publisher details in Apps & Features                    |
+# |   - support_www:    URL to your help desk/contact form/ticketing system for users to access support.                                    |
+# |   - support_phone:  Phone number to your help desk/contact form/ticketing system for users to access support.                           |
+# |   - company_www:    Your company's main website to be included in Apps & Features details/system properties.                            |
+# |   - logo_url:       Publicly accessible URL for downloading your logo in .bmp format, dimensions should be 120w x 120h                  |
+# |                                                                                                                                         |
 # ⎩ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎭
 #       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  ✚  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
 
