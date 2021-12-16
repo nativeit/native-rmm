@@ -1,13 +1,17 @@
-# |  #   #   #   #   #   #   #   #   #   #   #   #   #   __//    N A T I V E . I T    //__    #   #   #   #   #   #   #   #   #   #   #   |
-# |                                                                                                                                       |
-# |  This script checks for Chocolatey and installs it if needed. It then installs FusionInventory for a GPLI server                      |
-# |  specified by [{fusion_server_uri}]. A local report directory is added at C:\Support\FusionInventory.                                 |
-# |                                                                                                                                       |
-# |  This script was revised, tested, and approved on 2021-11-18.                                                                         |
-# |                                                                                                                                       |
-# |  #   #   #   #   #   #   #   #   #   #   #   #   #   __//    desk.nativeit.net     //__   #   #   #   #   #   #   #   #   #   #   #   |
 
-# Must be run as admin/system
+#                                                             𝝢 𝝠 𝝩 𝝞 𝗩 𝝣 ⧟ 𝝞 𝝩                                                             
+# ⎧ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎫
+# |                                                                                                                                         |
+# |  This script checks for Chocolatey and installs it if needed. It then installs FusionInventory for a GPLI server                        |
+# |  specified by [{fusion_server_uri}]. A local report directory is added at C:\Support\FusionInventory.                                   |
+# |                                                                                                                                         |
+# |  This script was revised, tested, and approved on 2021-11-18.                                                                           |
+# |                                                                                                                                         |
+# ⎩ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎭
+#       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  ✚  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
+
+
+#### Must be run as admin/system ####
 
 # Create directory for Fusion Inventory reports
 mkdir C:\Support\FusionInventory
