@@ -2,9 +2,10 @@
 #                                                             𝝢 𝝠 𝝩 𝝞 𝗩 𝝣 ⧟ 𝝞 𝝩                                                             
 # ⎧ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎫
 # |                                                                                                                                         |
-# |                                                                                                                                         |
 # |  This script sets Splashtop's security settings such that it will require entering Windows credentials before allowing                  |
 # |  remote access connections to complete.                                                                                                 |
+# |                                                                                                                                         |
+# |  This script was revised, tested, and approved on 2021-12-15.                                                                           |
 # |                                                                                                                                         |
 # ⎩ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎭
 #       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  ✚  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
