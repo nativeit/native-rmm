@@ -23,7 +23,7 @@
 # |   - support_www:    URL to your help desk/contact form/ticketing system for users to access support.                                    |
 # |   - support_phone:  Phone number to your help desk/contact form/ticketing system for users to access support.                           |
 # |   - company_www:    Your company's main website to be included in Apps & Features details/system properties.                            |
-# |   - logo_url:       Publicly accessible URL for downloading your logo in .bmp format, dimensions should be 120w x 120h                  |
+# |   - logo_url:       Publicly accessible URL for downloading your logo in 32-bit .bmp format, dimensions should be 120w x 120h           |
 # |                                                                                                                                         |
 # ⎩ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎭
 #       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  ✚  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
@@ -122,7 +122,7 @@ if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportURL" -Value "{[support_www]}"
     }
     
-  ## Downloads your custom logo (.bmp format, 120w x 120h) from a public host specified in variables
+  ## Downloads your custom logo (.bmp format, 120w x 120h) from a public host specified in variables. NOTE: This setting has been deprecated and will no longer appear in future versions of Windows.
 Invoke-WebRequest -Uri 'http://{[logo_URL]}' -OutFile 'C:\windows\system32\oemlogo.bmp'
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "Logo" -ErrorAction SilentlyContinue)){
         Write-Host "Logo does not yet exist. Adding custom entries."
