@@ -1,10 +1,10 @@
 #                                                             𝝢 𝝠 𝝩 𝝞 𝗩 𝝣 ⧟ 𝝞 𝝩                                                             
 # ⎧ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎫
 # |                                                                                                                                                 |
-# |  This script replaces the details of the Atera agent such that its app name in Apps & Features, services, and menus reflects                    |
-# |  your own brand rather than that of Atera's. The stock icon is replaced with one of your own (hosted from a public URL).                        |
+# |  TAP is a generated password that has a maximum amount of uses. This is ideal for a wide variety of tasks. Things                               |
+# |  like techs setting up new devices, onboarding new staff members, or for migrating users to new devices.                                        |
 # |                                                                                                                                                 |
-# |  This script was revised, tested, and approved on 2021-12-15.                                                                                   |
+# |  This script was revised on 2021-12-15. This script has not yet been tested.                                                                    |
 # |                                                                                                                                                 |
 # |     NOTES:                                                                                                                                      |
 # |       - This script was taken and adapted from https://www.cyberdrain.com/automating-with-powershell-deploying-temporary-access-passwords/      |                                                                                                                            |
