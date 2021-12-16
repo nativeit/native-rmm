@@ -16,73 +16,110 @@
 # |   - See further comments for more details about what is being changed.                                                                  |
 # |                                                                                                                                         |
 # ⎩ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ⎭
-#       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  &  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
+#       ⧉ desk.nativeit.net                                                                        𝑖 𝑚 𝑎 𝑔 𝑖 𝑛 𝑎 𝑡 𝑖 𝑜 𝑛  ✚  𝑡 𝑒 𝑐 ℎ 𝑛 𝑜 𝑙 𝑜 𝑔 𝑦
 
 
+#### This sets the name for the agent software listed in Apps & Features ####
 
-
-# This is to Modify the Name of the entry in Appwiz.cpl
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "DisplayName" -ErrorAction SilentlyContinue)){
-        Write-Host "DisplayName does not yet exist. Creating.."
+        Write-Host "DisplayName does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "DisplayName" -Value "{[your_appname]}" -PropertyType "String"
     } else {
-        Write-Host "DisplayName already exists. Modifying.."
+        Write-Host "DisplayName existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "DisplayName" -Value "{[your_appname]}"
     }
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Classes\Installer\Products\75E43F6C44CA62A4B8A085EC5A6E27F5\" -Name "ProductName" -ErrorAction SilentlyContinue)){
-        Write-Host "ProductName does not yet exist. Creating.."
+        Write-Host "ProductName does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Classes\Installer\Products\75E43F6C44CA62A4B8A085EC5A6E27F5\" -Name "ProductName" -Value "{[your_appname]}" -PropertyType "String"
     } else {
-        Write-Host "ProductName already exists. Modifying.."
+        Write-Host "ProductName existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Classes\Installer\Products\75E43F6C44CA62A4B8A085EC5A6E27F5\" -Name "ProductName" -Value "{[your_appname]}"
     }
+    
  
-# Copying App icon
-Invoke-WebRequest -Uri 'http://{[icon_URL]}/{[appname_slug]}.ico' -OutFile 'C:\windows\system32\{[appname_slug]}.ico'
+#### Downloads your custom icon (.ico format) from a public host specified in variables ####
+
+Invoke-WebRequest -Uri 'http://{[icon_URL]}' -OutFile 'C:\windows\system32\{[appname_slug]}.ico'
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "DisplayIcon" -ErrorAction SilentlyContinue)){
-        Write-Host "DisplayIcon does not yet exist. Creating.."
+        Write-Host "DisplayIcon does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "DisplayIcon" -Value "C:\Windows\System32\{[appname_slug]}.ico" -PropertyType "String"
     } else {
-        Write-Host "DisplayIcon already exists. Modifying.."
+        Write-Host "DisplayIcon existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "DisplayIcon" -Value "C:\Windows\System32\{[appname_slug]}.ico"
     }
+    
  
-# This is to Modify the Publisher of the entry in Appwiz.cpl
+#### Sets your company name in the "Publisher" field ####
+
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "Publisher" -ErrorAction SilentlyContinue)){
-        Write-Host "Publisher does not yet exist. Creating.."
+        Write-Host "Publisher does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "Publisher" -Value "{[company_name]}" -PropertyType "String"
     } else {
-        Write-Host "Publisher already exists. Modifying.."
+        Write-Host "Publisher existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "Publisher" -Value "{[company_name]}"
     }
  
  
-# These last four modify the Help Link, Support Link and Update Information available in appwiz.cpl
+#### This sets the links for help, support, and information in Apps & Features ####
+
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "HelpLink" -ErrorAction SilentlyContinue)){
-        Write-Host "HelpLink does not yet exist. Creating.."
+        Write-Host "HelpLink does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "HelpLink" -Value "{[support_www]}" -PropertyType "String"
     } else {
-        Write-Host "HelpLink already exists. Modifying.."
+        Write-Host "HelpLink existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "HelpLink" -Value "{[support_www]}"
     }
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "HelpTelephone" -ErrorAction SilentlyContinue)){
-        Write-Host "HelpTelephone does not yet exist. Creating.."
+        Write-Host "HelpTelephone does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "HelpTelephone" -Value "{[support_phone]}" -PropertyType "String"
     } else {
-        Write-Host "HelpTelephone already exists. Modifying.."
+        Write-Host "HelpTelephone existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "HelpTelephone" -Value "{[support_phone]}"
     }
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "URLInfoAbout" -ErrorAction SilentlyContinue)){
-        Write-Host "URLInfoAbout does not yet exist. Creating.."
+        Write-Host "URLInfoAbout does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "URLInfoAbout" -Value "{[company_www]}" -PropertyType "String"
     } else {
-        Write-Host "URLInfoAbout already exists. Modifying.."
+        Write-Host "URLInfoAbout existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "URLInfoAbout" -Value "{[company_www]}"
     }
 if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "URLUpdateInfo" -ErrorAction SilentlyContinue)){
-        Write-Host "URLUpdateInfo does not yet exist. Creating.."
+        Write-Host "URLUpdateInfo does not yet exist. Adding custom entries."
         New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "URLUpdateInfo" -Value "{[company_www]}" -PropertyType "String"
     } else {
-        Write-Host "URLUpdateInfo already exists. Modifying.."
+        Write-Host "URLUpdateInfo existing data found. Updating with custom entries."
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C6F34E57-AC44-4A26-8B0A-58CEA5E6725F}\" -Name "URLUpdateInfo" -Value "{[company_www]}"
     }
+    
+    
+ #### Sets the OEM information under System Properties ####
+ 
+  ## Sets support phone number
+if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportPhone" -ErrorAction SilentlyContinue)){
+        Write-Host "Existing support phone data not found. Adding custom entries."
+        New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportPhone" -Value "{[support_phone]}" -PropertyType "String"
+    } else {
+        Write-Host "Support phone existing data found. Updating with custom entries."
+        Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportPhone" -Value "{[support_phone]}"
+    }
+    
+  ## Sets helpdesk email link
+if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportURL" -ErrorAction SilentlyContinue)){
+        Write-Host "Existing support phone data not found. Adding custom entries."
+        New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportURL" -Value "{[support_www]}" -PropertyType "String"
+    } else {
+        Write-Host "Support phone existing data found. Updating with custom entries."
+        Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "SupportURL" -Value "{[support_www]}"
+    }
+    
+  ## Downloads your custom logo (.bmp format, 120w x 120h) from a public host specified in variables
+Invoke-WebRequest -Uri 'http://{[logo_URL]}' -OutFile 'C:\windows\system32\oemlogo.bmp'
+if(-not(Get-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "Logo" -ErrorAction SilentlyContinue)){
+        Write-Host "Logo does not yet exist. Adding custom entries."
+        New-Itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "Logo" -Value "C:\Windows\System32\oemlogo.bmp" -PropertyType "String"
+    } else {
+        Write-Host "Logo existing data found. Updating with custom entries."
+        Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\" -Name "Logo" -Value "C:\Windows\System32\oemlogo.bmp"
+    }
+ 
+
